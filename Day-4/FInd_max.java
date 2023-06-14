@@ -1,5 +1,5 @@
 
-public class FInd_max {
+public class find_max {
     
     public int largest(int arr[], int n)
     {
