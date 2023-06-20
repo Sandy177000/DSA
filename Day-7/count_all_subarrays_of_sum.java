@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 public class count_all_subarrays_of_sum {
      public static int findAllSubarraysWithGivenSum(int arr[], int s) {
-// ----------------Optimal prefix sum method------------------------------------
+     // ----------------Optimal prefix sum method------------------------------------
         
         int count = 0;
         HashMap<Integer,Integer> map = new HashMap<>();// (sum of subarray, frequency)

@@ -38,4 +38,41 @@ public class majority_element {
         return 0;
 
     }
+    // Return index of the majority element
+
+     public int majorityElement2(int[] nums) {
+
+        // find the majority element index
+        int majority_idx = 0;
+        int count1 = 1;
+        for(int i=1;i<nums.length;i++){
+            if(nums[majority_idx] == nums[i]){
+                count1++;
+            }
+            else{
+                count1--;
+            }
+            
+            if(count1==0){
+                // this indicates that there exists another majority element 
+                majority_idx = i;
+                //reset count 
+                count1 = 1;
+            }
+        }
+
+        // check if the majority element is greater than nums.length/2
+        int actual_count = 0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[majority_idx]==nums[i]){
+                actual_count++;
+            }
+        }
+
+        if(actual_count<=nums.length){
+            return -1;
+        }
+
+        return majority_idx;
+     }
 }
