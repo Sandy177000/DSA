@@ -7,6 +7,29 @@ public class all_subarrays_with_given_sum {
         int n = nums.length;
         int prefix_sum = 0;
         int count = 0;
+        // Initialize with zero sum occuring one time
+        map.put(0,1);
+
+        for(int i=0;i<n;i++){
+        
+            prefix_sum += nums[i];
+            
+            if(map.containsKey(prefix_sum - k)){
+                // get the frequency of the difference from the map
+                count = count + map.get(prefix_sum-k);
+            }
+            // store the prefix_sum upto index i
+            map.put(prefix_sum, map.getOrDefault(prefix_sum,0)+1);         
+
+        }   
+        return count;
+
+
+        /*
+        HashMap<Integer, Integer> map = new HashMap<Integer,Integer>();
+        int n = nums.length;
+        int prefix_sum = 0;
+        int count = 0;
 
         for(int i=0;i<n;i++){
             prefix_sum += nums[i];
@@ -27,7 +50,7 @@ public class all_subarrays_with_given_sum {
 
         }   
 
-        return count;
+        return count;*/
     }
 
     //brute force
