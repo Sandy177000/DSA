@@ -16,7 +16,7 @@ class Pair {
 
 public class floor_and_ceil_value {
 
-    
+    // for unsorted arrays
     Pair getFloorAndCeil(int[] arr, int n, int x)
     {
        
