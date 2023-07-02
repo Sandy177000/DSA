@@ -15,7 +15,7 @@ public class floor_in_sorted_array {
             else if(arr[mid]<=x){
                 
                 low = mid+1;
-                pos= low;
+                pos= mid;
             }
         }
         

@@ -1,7 +1,5 @@
 /***************refer to first and last position of element*********/
 
-
-
 public class number_of_occurence {
 
     int count(int[] nums, int n, int target) {

@@ -48,7 +48,7 @@ public class next_permutation {
             }
 
             // nums = 2 3 5 4 1 0 0
-            
+           
             // reverse the right side of breakpoint in the array 
             int start = breakpoint +1;
             int end = n-1;
