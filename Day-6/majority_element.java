@@ -45,6 +45,7 @@ public class majority_element {
         // find the majority element index
         int majority_idx = 0;
         int count1 = 1;
+        
         for(int i=1;i<nums.length;i++){
             if(nums[majority_idx] == nums[i]){
                 count1++;
