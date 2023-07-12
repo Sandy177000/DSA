@@ -10,6 +10,7 @@ public class binary_search_in_array_with_duplicates {
             if(nums[mid]==target){
                 return true;
             }
+            // array is half sorted
             if(nums[low]<nums[mid]){
                 
                 if(nums[mid]>target && target>=nums[low]){
