@@ -1,8 +1,57 @@
-
-/************************TRICKY QUESTION***************************/
-
 public class first_and_last_pos {
+    class Solution {
+        // optimised solution
+
+        public int[] searchRange(int[] nums, int target) {
     
+            int arr[] = new int[2];
+            if(nums.length==1 && target!=0)
+            {
+                arr[0] = 0;
+                arr[1] = 0;
+                return arr;
+            }
+    
+            int first = findingPosition(nums,target,true);
+            int last  = findingPosition(nums,target,false);
+            
+            arr[0] = first;
+            arr[1] = last;
+    
+            return arr;
+        }
+    
+        public static int findingPosition(int nums[], int target, boolean firstOccurrence)
+        {
+             int low = 0;
+             int high = nums.length-1;
+             int pos = -1;
+    
+             while(low<=high){
+                 int mid = low + (high - low)/2;
+    
+                 if(nums[mid]>target){
+                     high = mid-1;
+                 }
+                 else if(nums[mid]<target){
+                     low = mid+1;
+                 }
+                 else{
+                     pos = mid;
+                     if(firstOccurrence){
+                           high = mid - 1;// search in LHS 
+                     }
+                     else{
+                         low = mid + 1;// search in RHS
+                     }
+                 }
+             }
+    
+             return pos;
+        }
+    
+    }
+///////////////////////////////////////////////////////////////////////////////// 
     public int[] searchRange(int[] nums, int target) {
 
         int arr[] = new int[2];
@@ -21,6 +70,7 @@ public class first_and_last_pos {
 
         return arr;
     }
+
 
     // binary search
 

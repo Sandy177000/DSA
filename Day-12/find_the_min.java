@@ -1,5 +1,5 @@
 public class find_the_min {
-    //binary search
+    //binary search in rotated sorted array
     int findMin(int arr[], int n)
     {
         //complete the function here
