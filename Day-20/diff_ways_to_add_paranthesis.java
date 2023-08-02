@@ -1,4 +1,4 @@
-public class diff_ways_to_add_paranthesis {
+public class diff_ways_to_add_paranthesis_and_compute {
     class Solution {
 
         public List<Integer> diffWaysToCompute(String expression) 
