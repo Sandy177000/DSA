@@ -4,7 +4,8 @@ import java.util.Map;
 public class count_subarrays_with_xor {
 
     //  similar to prefix sum method 
-      public static int subarraysWithXorK(int []a, int k) {
+      public static int subarraysWithXorK(int []a, int k) 
+      {
         int n = a.length; //size of the given array.
         int xr = 0;
         Map<Integer, Integer> mpp = new HashMap<>(); //declaring the map.

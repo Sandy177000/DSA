@@ -33,12 +33,14 @@ public class allot_books {
         
     }
     
-    public static boolean possible(int A[], int max_pages, int students){
+    public static boolean possible(int A[], int max_pages, int students)
+    {
         int pages = 0;
         
         int num_of_students = 1;
         
-        for(int i=0;i<A.length;i++){
+        for(int i=0;i<A.length;i++)
+        {
             if(pages+A[i]<=max_pages)
             {
                 pages+=A[i];

@@ -10,7 +10,6 @@ public class longestpalindrome {
 
             for (int i = 0; i < s.length(); i++) 
             {
-    
                 int left = i;
                 int right = i;
                 //odd indexed string

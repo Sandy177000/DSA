@@ -24,7 +24,7 @@ public class combination {
                 return;
             }
     
-                //pick (if you moved this problem would be similar to subsets ;))
+                //pick (if you moved index this problem would be similar to subsets ;))
                 list.add(arr[index]);
                 helper(arr,index,target,sum+arr[index],list,res);
                 list.remove(list.size()-1); // backtrack
