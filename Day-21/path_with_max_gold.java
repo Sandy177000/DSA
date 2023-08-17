@@ -13,7 +13,7 @@ public class path_with_max_gold {
         public int solve(int[][] arr, int row, int col){
     
             int max = 0;
-            for(int i=0;i<row;i++){
+            for(int i =0;i<row;i++){
     
                 for(int j = 0;j<col;j++)
                 {
