@@ -29,6 +29,7 @@ public class longest_subarray_of_sum_zero {
             if(!map.containsKey(curr_sum)){
                 map.put(curr_sum,i);
             }
+            
         }
         
         return maxlen;

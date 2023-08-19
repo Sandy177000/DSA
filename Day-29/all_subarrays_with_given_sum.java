@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class all_subarrays_with_given_sum {
-    //Refer to Day-7 prefix sum problem
     public int subarraySum(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<Integer,Integer>();
         int n = nums.length;
