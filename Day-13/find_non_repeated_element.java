@@ -34,6 +34,7 @@ public class find_non_repeated_element {
             //        at odd mid index, mid element and the prev element should be same
             // only then we can say the element which we are looking for is in the right half of the array
             
+            // 
             if( ( (mid%2!=0) && (arr[mid] == arr[mid-1]) ) || 
                 ( (mid%2==0) && (arr[mid] == arr[mid+1]) ) 
               )

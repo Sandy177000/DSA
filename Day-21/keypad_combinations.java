@@ -33,7 +33,7 @@ class Main {
 		 }
 		 // Pick a char at ith index and convert it to digit
 		 int digit = up.charAt(index) -'0';
-		// loop through the corresponding string of the digit
+		 // loop through the corresponding string of the digit
 		 for(int i=0;i<list.get(digit).length();i++)
 		 {
 			 // pick the character

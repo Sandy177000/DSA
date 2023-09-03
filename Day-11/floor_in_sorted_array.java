@@ -4,12 +4,6 @@ public class floor_in_sorted_array {
     {
         int low = 0;
         int high = n-1;
-        int pos = -1;
-
-        // if target is greater than all the elements in the sorted array
-        if(x>arr[n-1]){
-            return n-1;
-        }
         
         while(low<=high){
             int mid = (low+high)/2;

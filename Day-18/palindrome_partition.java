@@ -1,4 +1,5 @@
-public class palindrome_partition {
+public class palindrome_partition 
+{
     class Solution {
         public List<List<String>> partition(String s) {
             

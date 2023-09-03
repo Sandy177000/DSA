@@ -15,7 +15,6 @@ public class combination_without_duplicates {
     
         public void solve(int[] arr,int index, int target,List<Integer> list,List<List<Integer>> ans){
     
-    
             if(target==0)
             {  
                ans.add(new ArrayList<>(list));

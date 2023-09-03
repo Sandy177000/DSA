@@ -13,11 +13,13 @@ public class longestpalindrome {
                 int left = i;
                 int right = i;
                 //odd indexed string
+
                 while (left >= 0 && right < s.length())
                 {
                     if(s.charAt(left)==s.charAt(right)){
     
-                        if (maxlen < right - left + 1) {
+                        if (maxlen < right - left + 1) 
+                        {
                             maxlen = right - left + 1;
                             ans = s.substring(left, right + 1);
                         }

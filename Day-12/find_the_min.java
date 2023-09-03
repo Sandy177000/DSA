@@ -11,7 +11,8 @@ public class find_the_min {
             int mid = (low + high)/2;
             
                
-            if(arr[mid]>=arr[low]){// left part sorted or not
+            if(arr[mid]>=arr[low]){
+                // left part sorted or not
                 
                 min = Math.min(arr[low], min);
                 low = mid+1;// move to the right part
