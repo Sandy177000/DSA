@@ -3,7 +3,7 @@ public class rotten_oranges {
         public int orangesRotting(int[][] grid) 
         {
               // storing all the rotten oranges points in the queue
-    
+                  
               Queue<int[]> queue = new LinkedList<>();
               int oranges = 0;
     

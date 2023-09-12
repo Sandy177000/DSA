@@ -30,6 +30,7 @@ public class sliding_window_max {
                 dq.offerLast(i);
     
                 
+                // skip for the first window of k elements
                 if(i>=k-1)
                 {
                     // storing the max which logically is at the left of the deq

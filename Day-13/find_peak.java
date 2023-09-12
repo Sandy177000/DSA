@@ -1,6 +1,8 @@
 //*******************TRICKY QUESTION*******************************/
 
 public class find_peak {
+
+    //1d matrix
     public int peakElement(int[] arr,int n)
     {
        //corner cases
@@ -42,4 +44,60 @@ public class find_peak {
        return 0;
        
     }    
+
+    // 2d matrix
+    class Solution {
+        public int[] findPeakGrid(int[][] mat) {
+            
+    
+            int low = 0;
+            int high = mat.length-1;
+    
+            while(low<=high){
+                int mid = (low+high)/2;
+    
+                int idx = 0;
+    
+                // linearly find the peak index
+                for(int i= 0;i<mat[0].length;i++){
+                    if(mat[mid][i]>mat[mid][idx]){
+                        idx = i;
+                    }
+                }
+    
+                boolean top = true;
+                boolean bottom = true;
+    
+                if(mid-1>=0){
+                    if(mat[mid][idx]<mat[mid-1][idx]){
+                        top = false;
+                    }
+                }
+                
+                if(mid+1<=mat.length-1){
+                    if(mat[mid][idx]<mat[mid+1][idx]){
+                        bottom = false;
+                    }
+                }
+    
+                if(top && bottom){
+                    // peak found
+                    return new int[]{mid,idx};
+                }
+                else if(top==false){
+                    // go to top row
+                    high = mid-1;
+                }
+                else{
+                    // go to bottom row
+                    low = mid+1;
+                }
+    
+    
+            }
+            
+                return null;
+        }
+    }
 }
+

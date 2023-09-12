@@ -1,40 +1,60 @@
 public class celebrity_problem {
     
+
+
+
 class Solution
 { 
-    int findCelebrity(int M[][], int n)
+    //Function to find if there is a celebrity in the party or not.
+    int celebrity(int M[][], int n)
     {
-       Stack<Integer> stack = new Stack<>();
-
-		for(int i=0;i<M.length;i++){
-			stack.push(i);
-		}
-
-		while(stack.size()>=2)
-		{   
-			// picking top 2 persons
-			int p1 = stack.pop();
-			int p2 = stack.pop();
-			if(M[p1][p2]==1){ // p1 knows p2
-				stack.push(p2); // p2 might be celeb p1 is not
-			}
-			else{
-				stack.push(p1); //p1 might be celeb p2 is not
-			}
-		}
-
-		int celeb = stack.pop();
-		
-		// check if the celeb is actually a celeb
-		for(int i=0;i<M.length;i++)
-		{
-			if(M[celeb][i]==1 && celeb!=i){ // celeb knows i thus can't be a celeb
-				return -1;
-			}
-		}
-
-		return celeb;
+    	// code here 
+    	Stack<Integer> st = new Stack<>();
+    	
+    	for(int i=0;i<n;i++){
+    	    st.push(i);
+    	}
+    	
+    	while(st.size()>1){
+    	    int p1 = st.pop();
+    	    int p2 = st.pop();
+    	    // p1 does not know p2  
+    	    if(M[p1][p2]==0){
+    	        st.push(p1); // p1 may be celeb
+    	    }
+    	    else{
+    	        st.push(p2); // p2 may be celeb
+    	    }
+    	}
+    	
+    	int celeb = st.pop();
+    	
+    	int celeb_does_not_know  = 0 ; // n people (including himself)
+     	int people_who_know_celeb = 0; // n-1 people 
+    	
+    	for(int i = 0;i<n;i++)
+    	{
+    	    // celeb does not know anyone
+    	    if(M[celeb][i]==0){
+    	        
+    	        celeb_does_not_know++;
+    	        
+    	    }
+    	    if(M[i][celeb]==1){
+    	    // all know celeb
+    	        people_who_know_celeb++;
+    	    }
+    	}
+    	
+    	
+    	if(people_who_know_celeb==n-1 && celeb_does_not_know == n){
+    	    return celeb;
+    	}
+    	else{
+    	    return -1;
+    	}
+    	
+    	
     }
-
 }
 }

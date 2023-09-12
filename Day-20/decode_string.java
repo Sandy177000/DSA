@@ -1,6 +1,8 @@
 class Solution {
 
-    public String decodeString(String s, int i)
+    static int i =0;
+    
+    public String decodeString(String s)
     {
         StringBuilder sb = new StringBuilder();
         int num = 0;

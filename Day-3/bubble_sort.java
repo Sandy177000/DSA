@@ -3,8 +3,6 @@
 // Stable
 // Adaptive: O(n) when nearly sorted
 
-
-
 public class bubble_sort {
 
 

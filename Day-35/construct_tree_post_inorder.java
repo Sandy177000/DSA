@@ -44,6 +44,8 @@ class Solution {
 
         return root;
 
+        // inorder left-> root -> right
+        // postorder left-> right -> root
     }
 
 }
