@@ -1,8 +1,45 @@
 public class longest_substring_with_k_unique_chars {
     
-    public static int longestkSubstr(int n, int k,String s){
+    public static int longestkSubstr(int k,String s){
+		HashMap<Character, Integer> map = new HashMap<>();
+        
+        int sp = 0;
+        int ep = 0;
+        int n = s.length();
+        int ans = -1;
+        
+        while(ep<n){
+            
+            char ch = s.charAt(ep);
+            map.put(ch, map.getOrDefault(ch,0)+1);
+            
+            if(map.size()==k){
+                if(ans<ep-sp+1){
+                    ans = ep -sp+1;
+                }
+            }
+            else{
+                    while(sp<ep && map.size()>k)
+                    {
+                        char c = s.charAt(sp);
+                        if(map.getOrDefault(c,0)==1)
+                        {
+                            map.remove(c);
+                        }
+                        else{
+                            map.put(c,map.getOrDefault(c,0)-1);
+                        }
+                        sp++;
+                    }
+            }
+            
+            ep++;
+        }
+        
+        return ans;
+    }
 
-		int ans = 0;
+/* 		int ans = 0;
 		int i = -1;
 		int j = -1;
 
@@ -71,8 +108,8 @@ public class longest_substring_with_k_unique_chars {
 			}
 		}
 
-		return ans!=0?ans:-1;
+		return ans!=0?ans:-1;*/
     }
 
 
-}
+

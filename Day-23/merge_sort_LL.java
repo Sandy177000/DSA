@@ -103,22 +103,5 @@ public class merge_sort_LL {
             curr.next = new_node;
         }
     }
-    public class Main {
-        public static void main(String[] args) {
-            Scanner input = new Scanner(System.in);
-            int n = input.nextInt();
-            LinkedList a = new LinkedList();
-            for(int i = 0; i < n; i++){
-                a.add(input.nextInt());
-            }
-            Solution Obj = new Solution();
-            a.head = Obj.mergesort(a.head);
-            Node h = a.head;
-            while(h != null){
-                System.out.print(h.data + " ");
-                h = h.next;
-            }
-        }
-    }
         
 }

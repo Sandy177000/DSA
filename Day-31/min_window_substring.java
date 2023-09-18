@@ -1,4 +1,56 @@
 public class min_window_substring {
+    class Solution {
+
+        // simpler approach
+        public boolean isValid(HashMap<Character, Integer> ideal, HashMap<Character, Integer> curr)
+        {
+            for(Character ch: curr.keySet()){
+                if(ideal.getOrDefault(ch,0)!=curr.get(ch)) return false;
+            }
+            return true;
+        }
+        
+        public String minWindow(String s, String t) 
+        {
+            HashMap<Character, Integer> ideal = new HashMap<>();
+            HashMap<Character, Integer> curr = new HashMap<>();
+    
+            for(int i = 0;i<s.length();i++)
+            {
+                char ch = t.charAt(i);
+                ideal.put(ch, ideal.getOrDefault(ch,0)+1);
+            }	
+            
+            int end = 0;
+            int start = 0;
+    
+            int ansLen = s.length();
+            String ans = "";
+    
+            while(end<s.length()){
+    
+                char currChar = s.charAt(end);
+                curr.put(currChar, curr.getOrDefault(currChar,0)+1);
+    
+                while(isValid(ideal, curr)){
+                    if(ansLen>end-start+1){
+                        ansLen = end-start+1;
+                        ans = s.substring(start, end+1);
+                    }
+    
+                    curr.put(s.charAt(start), curr.get(s.charAt(start))-1);
+                    start++;
+                }
+    
+                end++;
+            }
+    
+            return ans;
+    
+            
+        }
+    }
+    
 
     // similar to distinct window
     class Solution {
