@@ -1,5 +1,58 @@
 public class distinct_character_substrings {
 
+
+    // similar to longest distinct char substring 
+    public static long DistinctCharacterSubstring2(String s){
+        //using sets counting the possible distinct char substrings
+		HashSet<Character> set = new HashSet<>();
+		int sp = 0;
+		int ep = 0;
+		long count = 0;
+		while(ep<s.length()){
+
+			if(set.contains(s.charAt(ep))) //repeated char found at ep
+			{
+				set.remove(s.charAt(sp)); // shrink the window as now the window cannot be consider as distinct char substring 
+				sp++;
+			}
+			else{
+				set.add(s.charAt(ep)); // expand the window by adding only the unique chars
+				count+= ep-sp+1;
+				ep++;
+			}
+		}
+
+		return count;
+			
+    }
+
+    public static long DistinctCharacterSubstring1(String s){
+        //easy method
+		HashMap<Character, Integer> map = new HashMap<>(); // char-> freq
+
+		int sp = 0;
+		int ep = 0;
+		int count = 0;
+		
+		while(ep<s.length()){
+			if(map.getOrDefault(s.charAt(ep),0)==0)
+			{
+				//freq = 0 so char is unique so calculate count of substrings ending with char at ep
+				count+= ep-sp+1;
+				map.put(s.charAt(ep),map.getOrDefault(s.charAt(ep),0)+1);
+			    ep++; // expanding the window
+			}
+			else{  // char is repeated so shrink the window
+					map.put(s.charAt(sp),map.get(s.charAt(sp))-1);
+					sp++; // shrinking the window 
+			}
+		}
+
+		return count;
+		
+		
+    }
+
     public static long DistinctCharacterSubstring(String s){
 
         

@@ -30,16 +30,16 @@ public class min_window_substring {
             while(end<s.length()){
     
                 char currChar = s.charAt(end);
-                curr.put(currChar, curr.getOrDefault(currChar,0)+1);
+                curr.put(currChar, curr.getOrDefault(currChar,0)+1); // expanding the window
     
-                while(isValid(ideal, curr)){
+                while(isValid(ideal, curr)){ // checking if the freq of chars match with chars present in the target string
                     if(ansLen>end-start+1){
                         ansLen = end-start+1;
                         ans = s.substring(start, end+1);
                     }
     
                     curr.put(s.charAt(start), curr.get(s.charAt(start))-1);
-                    start++;
+                    start++; // shriking the window
                 }
     
                 end++;

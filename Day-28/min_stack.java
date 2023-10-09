@@ -13,6 +13,7 @@ class Solution
 	void push(int x){
 		if(s.isEmpty())
 		{
+			// pushing for first time
 			minEle = x;
 			s.push(x);
 		}
@@ -23,7 +24,7 @@ class Solution
 		}
 		else
 		{
-			
+			// if number is less than the curr minimum  
 			s.push(2*x -minEle);
 			minEle = x;
 		}
@@ -42,6 +43,7 @@ class Solution
 			}
 			else
 			{   
+				// if the number in the stack is less than the curr minimum
 				int y  = minEle;
 				minEle = 2*minEle - s.pop();
 				return y;
