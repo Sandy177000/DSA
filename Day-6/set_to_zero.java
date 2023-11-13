@@ -2,7 +2,7 @@ public class set_to_zero {
      public void setZeroes(int[][] matrix) {
         int col = matrix[0].length;
         int row = matrix.length;
- 
+
         boolean mat[][] = new boolean[row][col];
 
         //mark the zero elements to be visited

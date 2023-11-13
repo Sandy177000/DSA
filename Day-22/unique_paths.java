@@ -33,7 +33,6 @@ public class unique_paths {
         public int findPaths(int count ,int[][] grid, int i, int j, boolean[][] vis)
         {
     
-          
             if(i<0 || i>grid.length-1 || j>grid[0].length-1 || j<0 || grid[i][j]==-1 || vis[i][j]) 
             { 
                 return 0;

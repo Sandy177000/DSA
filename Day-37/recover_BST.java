@@ -49,8 +49,8 @@ public class recover_BST {
 		TreeNode a = null;
 		TreeNode b = null;
 
-		// to find out the swapped nodes the we check if the adjacent nodes 
-		// in the inorder traversal should be sorted
+		// to find out the swapped nodes we check if the adjacent nodes 
+		// in the inorder traversal are sorted
 		while(curr!=null){
 			if(prev.val>curr.val){
 			   if(a==null){

@@ -13,9 +13,8 @@ class Solution
 		{
 			
 			Node temp = root.right;
-			// link right node to left node
+			// link right to left node
 			root.right = root.left;
-
 			Node curr = root.left;
 
 			// move to right most end 

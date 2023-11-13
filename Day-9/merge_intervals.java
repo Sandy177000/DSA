@@ -19,7 +19,6 @@ public class merge_intervals {
             else
             { 
                 i++;
-
                 // shift the meeting timings of curr meeting to prev meeting 
                 arr[i][0]=arr[j][0];
                 arr[i][1]=arr[j][1];   

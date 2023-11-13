@@ -33,7 +33,7 @@ public class longestpalindrome {
                 }
     
     
-                //odd indexed string
+                //even indexed string
                 left = i;
                 right = i + 1;
                 while (left >= 0 && right < s.length()) 

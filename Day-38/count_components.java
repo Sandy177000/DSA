@@ -1,4 +1,5 @@
 public class count_components {
+
     class Solution {
         public int findCircleNum(int[][] graph) {
             
@@ -34,8 +35,8 @@ public class count_components {
     }
 
     // using disjoint set technique0
-    class Solution {
-
+    class Solution 
+    {
         class DisjointSet
         {
             int[] parent;

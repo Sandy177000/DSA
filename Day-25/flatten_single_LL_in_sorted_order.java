@@ -1,5 +1,6 @@
 public class flatten_single_LL_in_sorted_order {
-    static Node flatten(Node root) 
+  
+	static Node flatten(Node root) 
   {
 	return recur(root, root.right);
   }

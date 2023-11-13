@@ -21,8 +21,8 @@ public class avoid_flood {
                             return new int[0];
                         }
     
-                        ans[next] = rains[i];
-                        set.remove(next);
+                        ans[next] = rains[i]; // rain transfered to the day where there was no rain
+                        set.remove(next); 
     
                     }
                     // storing the amount of rain and the its day

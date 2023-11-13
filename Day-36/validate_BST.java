@@ -1,5 +1,23 @@
 public class validate_BST {
     
+
+	class Solution {
+		public boolean isValidBST(TreeNode root) {
+			
+		   return solve(root,Long.MIN_VALUE,Long.MAX_VALUE);
+	
+		}
+	
+		public boolean solve(TreeNode root, long lower, long higher){
+			if(root==null) return true;
+	
+			if(root.val<=lower || root.val>=higher) return false;
+	
+			return solve(root.right,root.val,higher) && solve(root.left,lower,root.val); 
+	
+		}
+	}
+	
 class Solution{
     boolean isBST(Node root)
 	{

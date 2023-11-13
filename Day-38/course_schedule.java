@@ -14,9 +14,8 @@ public class course_schedule {
             for(int[] item: adj){
                 int u = item[0];
                 int v = item[1];
-                dependency[u]++;
+                dependency[v]++;
                 graph.get(u).add(v);
-                graph.get(v).add(u);
             }
     
             Queue<Integer> q = new LinkedList<>();
@@ -41,7 +40,6 @@ public class course_schedule {
             }
     
             return topo.size()==N?true:false;
-    
     
         }
     }
